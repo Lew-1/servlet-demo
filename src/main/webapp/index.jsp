@@ -9,7 +9,7 @@
     </h1>
     <br/>
     <a href="hello-servlet">Hello Servlet</a>
-    <form action="http://localhost:8080/servlet_demo/hello" method="get">
+    <form action="http://localhost:8080/servlet_demo/hello" method="post">
         <input type="submit">
     </form>
 </body>

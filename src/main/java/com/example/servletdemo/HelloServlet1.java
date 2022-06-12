@@ -24,7 +24,11 @@ public class HelloServlet1 implements Servlet {
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         String method = httpServletRequest.getMethod();
-        System.out.println(method);
+        if ("GET".equals(method)) {
+            System.out.println("get method");
+        } else if ("POST".equals(method)) {
+            System.out.println("post method");
+        }
         System.out.println("servlet service start");
     }
 
