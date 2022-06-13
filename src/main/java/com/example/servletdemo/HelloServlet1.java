@@ -13,6 +13,11 @@ public class HelloServlet1 implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         System.out.println("servlet init...");
+        System.out.println("HelloServlet1 的别名是 " + servletConfig.getServletName());
+        System.out.println("初始化参数 user_name :" + servletConfig.getInitParameter("user_name"));
+        System.out.println("初始化参数 password :" + servletConfig.getInitParameter("password"));
+        // 获取 servletContext 对象
+        System.out.println(servletConfig.getServletContext());
     }
 
     @Override

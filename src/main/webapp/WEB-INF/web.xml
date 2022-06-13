@@ -3,12 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    
+    <!--整个上下文的 web 配置-->
+    <context-param>
+        <param-name>namespace</param-name>
+        <param-value>jack</param-value>
+    </context-param>
+    <context-param>
+        <param-name>project_name</param-name>
+        <param-value>test</param-value>
+    </context-param>
 
     <!--给 tomcat 配置 Servlet 程序-->
     <servlet>
         <!--别名-->
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.example.servletdemo.HelloServlet1</servlet-class>
+        <!--初始化参数-->
+        <init-param>
+            <param-name>user_name</param-name>
+            <param-value>lew</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>666</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Servlet2</servlet-name>
+        <servlet-class>com.example.servletdemo.Servlet2</servlet-class>
     </servlet>
 
     <!--给 Servlet 配置访问地址-->
@@ -16,5 +40,9 @@
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>Servlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
