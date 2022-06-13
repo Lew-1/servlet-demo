@@ -23,6 +23,7 @@ public class AnotationServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println(request.getParameter("tt"));
         ServletConfig servletConfig = getServletConfig();
         String test = servletConfig.getInitParameter("test");
         System.out.println(test);
