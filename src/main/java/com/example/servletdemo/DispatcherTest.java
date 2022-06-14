@@ -16,8 +16,11 @@ import java.io.IOException;
 public class DispatcherTest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // parameter 由前端传入，比如 ?xx=123 的形式
+        System.out.println(request.getParameter("xx"));
         request.setAttribute("tt", "33");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/hello-servlet");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/dispatcherTest2");
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/hello.html");
         requestDispatcher.forward(request, response);
     }
 
