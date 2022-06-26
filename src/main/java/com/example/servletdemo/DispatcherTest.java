@@ -19,8 +19,10 @@ public class DispatcherTest extends HttpServlet {
         // parameter 由前端传入，比如 ?xx=123 的形式
         System.out.println(request.getParameter("xx"));
         request.setAttribute("tt", "33");
+        // 创建请求调度器
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/dispatcherTest2");
 //        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/hello.html");
+        // 用调度器转发
         requestDispatcher.forward(request, response);
     }
 
